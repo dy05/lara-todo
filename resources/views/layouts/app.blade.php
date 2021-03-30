@@ -33,7 +33,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @if (Route::has('todos.index'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('todos.index') }}">{{ __('Todos List') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('todos.index', ['type' => 'done']) }}">{{ __('Todos done') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('todos.index', ['type' => 'undone']) }}">{{ __('Todos undone') }}</a>
+                        </li>
+                        @endif
+                        @if (Route::has('todos.create'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('todos.create') }}">{{ __('Create Todo') }}</a>
+                        </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -45,7 +60,7 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
