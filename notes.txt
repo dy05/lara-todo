@@ -1,0 +1,3 @@
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm run prod
