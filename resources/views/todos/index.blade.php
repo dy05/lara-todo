@@ -44,6 +44,9 @@
                                 </div>
                             </div>
                         @endforeach
+                        <div class="col-md-8 mt-4">
+                            {{ $todos->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

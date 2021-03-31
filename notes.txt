@@ -1,3 +1,18 @@
 composer require laravel/ui
 php artisan ui bootstrap --auth
 npm run prod
+
+
+Dans les migration, on utilise faker en faisant $this->faker
+Copier l'exemple du factory par defaut pour le User
+
+Dans laravel 8, dans le fichier web.php ou api.php du dossier route. on doit specifier le chemin complet d'une classe
+comme ceci App\Http\Controllers\HomeController::class, et non plu juste HomeController::class
+
+Il faut preciser dans le App\Providers\AppServiceProvider, la methode boot, que cest bootstrap quon utilise pour la pagination, parce que par defaut il considere Tailwind
+avec la commande
+\Illuminate\Pagination\Paginator::useBootstrap();
+
+
+A l'interieur de la function/methode boot()
+
